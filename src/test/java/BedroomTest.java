@@ -38,7 +38,7 @@ public class BedroomTest {
         String result = bedroom.addGuest(guest);
         assertEquals("Guest added!", result);
     }
-    
+
     @Test
     public void canRemoveGuest(){
         String result = bedroom.addGuest(guest);
