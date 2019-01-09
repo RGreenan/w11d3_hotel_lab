@@ -19,8 +19,8 @@ public class HotelTest {
     @Before
     public void before(){
         this.guest = new Guest("Jennifer");
-        this.bedroom1 = new Bedroom(1, 1, "single");
-        this.bedroom2 = new Bedroom(2, 2, "double");
+        this.bedroom1 = new Bedroom(1, 1, "single", 35);
+        this.bedroom2 = new Bedroom(2, 2, "double", 65);
         this.diningroom = new OtherRoom("diningroom", 20);
         this.reception = new OtherRoom("reception", 5);
         this.bedrooms = new ArrayList<>();
@@ -73,5 +73,11 @@ public class HotelTest {
         assertEquals(1, hotel.guestsInRoom(reception).size());
         hotel.checkOut(guest, reception);
         assertEquals(0, hotel.guestsInRoom(reception).size());
+    }
+
+    @Test
+    public void canMakeBooking(){
+        Booking newBooking = hotel.bookRoom(bedroom2, 3);
+        assertEquals(195, newBooking.getBill());
     }
 }

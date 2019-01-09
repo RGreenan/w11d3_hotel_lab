@@ -47,4 +47,8 @@ public class Hotel {
     public String checkOut(Guest guest, OtherRoom room){
         return otherRooms.get(otherRooms.indexOf(room)).removeGuest(guest);
     }
+
+    public Booking bookRoom(Bedroom bedroom, int nights){
+        return new Booking(bedroom, nights);
+    }
 }
